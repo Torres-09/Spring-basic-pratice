@@ -1,26 +1,16 @@
 package Inflearn.core.order;
 
 public class Order {
-    private Long orderId;
     private Long memberId;
     private String itemName;
     private int itemPrice;
     private int discountPrice;
 
-    public Order(Long orderId, Long memberId, String itemName, int itemPrice, int discountPrice) {
-        this.orderId = orderId;
+    public Order(Long memberId, String itemName, int itemPrice, int discountPrice) {
         this.memberId = memberId;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.discountPrice = discountPrice;
-    }
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
     }
 
     public int calculatePrice() {
