@@ -2,6 +2,7 @@ package Inflearn.core.order;
 
 import Inflearn.core.discount.DiscountPolicy;
 import Inflearn.core.discount.FixDiscountPolicy;
+import Inflearn.core.discount.RateDiscountPolicy;
 import Inflearn.core.member.Member;
 import Inflearn.core.member.MemberRepository;
 import Inflearn.core.member.MemoryMemberRepository;
@@ -9,7 +10,7 @@ import Inflearn.core.member.MemoryMemberRepository;
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private DiscountPolicy discountPolicy;
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
