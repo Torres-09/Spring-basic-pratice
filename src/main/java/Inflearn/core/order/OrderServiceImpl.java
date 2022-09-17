@@ -1,5 +1,6 @@
 package Inflearn.core.order;
 
+import Inflearn.core.annotation.MainDiscountPolicy;
 import Inflearn.core.discount.DiscountPolicy;
 import Inflearn.core.discount.FixDiscountPolicy;
 import Inflearn.core.discount.RateDiscountPolicy;
@@ -17,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
